@@ -955,7 +955,7 @@ cv::Mat ipa_Utils::GetColorcoded(const cv::Mat& img_32F, double min, double max)
             }
             else
             {
-                hsvImage.at<cv::Vec3b>(i,j) = GrayColorMap(1-val, 0, 1);
+                hsvImage.at<cv::Vec3b>(i,j).operator=((const cv::Vec<unsigned char, 3>) GrayColorMap(1-val, 0, 1));
             }
         }
     }
